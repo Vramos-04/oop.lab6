@@ -2,6 +2,7 @@ package it.unibo.collections;
 
 import java.util.List;
 import java.util.Map;
+import java.util.ArrayList;
 
 /**
  * Example class using {@link List} and {@link Map}.
@@ -21,6 +22,11 @@ public final class UseListsAndMaps {
          * 1) Create a new ArrayList<Integer>, and populate it with the numbers
          * from 1000 (included) to 2000 (excluded).
          */
+        Integer NUMBERS = 1000;
+        final List<Integer> coll = new ArrayList<>();
+        for(int i = NUMBERS;i < 2000;i++){
+            coll.add(i);
+        }
         /*
          * 2) Create a new LinkedList<Integer> and, in a single line of code
          * without using any looping construct (for, while), populate it with
