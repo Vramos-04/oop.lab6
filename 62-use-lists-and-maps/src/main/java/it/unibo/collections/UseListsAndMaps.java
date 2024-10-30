@@ -1,9 +1,10 @@
 package it.unibo.collections;
 
 import java.util.List;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Map;
+import java.util.HashMap;
 
 /**
  * Example class using {@link List} and {@link Map}.
@@ -117,7 +118,14 @@ public final class UseListsAndMaps {
          * Oceania -> 38,304,000
          */
 
+         HashMap<String,Long> worldContinentPopulation = new HashMap<>();
 
+         worldContinentPopulation.put("Africa",1_110_635_000L);
+         worldContinentPopulation.put("Americas",972_005_000L);
+         worldContinentPopulation.put("Antartica",0L);
+         worldContinentPopulation.put("Asia",4_298_723_000L);
+         worldContinentPopulation.put("Europe",742_452_000L);
+         worldContinentPopulation.put("Oceania",38_304_000L);
         /*
          * 8) Compute the population of the world
          */
