@@ -129,5 +129,10 @@ public final class UseListsAndMaps {
         /*
          * 8) Compute the population of the world
          */
+        long worldPopulation = 0;
+        for(Long continentPopulation:worldContinentPopulation.values()){
+            worldPopulation = continentPopulation + worldPopulation;
+        }
+        System.out.println("World Population : " + worldPopulation);
     }
 }
