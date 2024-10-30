@@ -97,8 +97,8 @@ public final class UseListsAndMaps {
             int linkedListValue = secondList.get(middleIndex);
         } 
 
-        System.out.println( "Time spent for reading 1000 times in the ArrayList = " +arrayListReadingTime );
-        System.out.println( "Time spent for reading 1000 times in the LinkedList = " +linkedListReadingTime );
+        System.out.println( "Time spent for reading 1000 times in the ArrayList = " + arrayListReadingTime );
+        System.out.println( "Time spent for reading 1000 times in the LinkedList = " + linkedListReadingTime );
 
         /*
          * 7) Build a new Map that associates to each continent's name its
