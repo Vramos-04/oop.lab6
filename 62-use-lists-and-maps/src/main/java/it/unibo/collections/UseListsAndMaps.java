@@ -24,24 +24,24 @@ public final class UseListsAndMaps {
          * from 1000 (included) to 2000 (excluded).
          */
         Integer NUMBERS = 1000;
-        final List<Integer> coll = new ArrayList<>();
+        List<Integer>coll = new ArrayList<>();
         for(int i = NUMBERS;i < 2000;i++){
-            coll.add(i);
+        coll.add(i);
         }
         /*
          * 2) Create a new LinkedList<Integer> and, in a single line of code
          * without using any looping construct (for, while), populate it with
          * the same contents of the list of point 1.
          */
-        LinkedList<Integer> secondList = new LinkedList<>(coll);
+        LinkedList<Integer> secondList = new LinkedList<>coll);
         /*
          * 3) Using "set" and "get" and "size" methods, swap the first and last
          * element of the first list. You can not use any "magic number".
          * (Suggestion: use a temporary variable)
          */
-        int temporaryVariable = coll.get(0);
-        coll.set(0,coll.get(coll.size()-1));
-        coll.set(coll.size()-1,temporaryVariable);     
+        int temporaryVariable =coll.get(0);
+         coll.set(coll.get(0),coll.size()-1);
+         coll.set(coll.size()-1,temporaryVariable);     
         /*
          * 4) Using a single for-each, print the contents of the arraylist.
          */
@@ -55,7 +55,26 @@ public final class UseListsAndMaps {
          * using the previous lists. In order to measure times, use as example
          * TestPerformance.java.
          */
+        final int LAST_ELEM = 100_000;
+        long ArrayListInsertTime = System.nanoTime();
+
+        for(int i = 1 ; i <= LAST_ELEM ; i++){
+        coll.addFirst(i);
+        }
+       
+        ArrayListInsertTime = System.nanoTime() - ArrayListInsertTime;
+
+        long LinkedListInsertTime = System.nanoTime();
         
+        for(int j = 1 ; j <= LAST_ELEM ; j++){
+            secondList.addFirst(j);
+        }
+
+        LinkedListInsertTime = System.nanoTime() - LinkedListInsertTime;
+
+        System.out.println(("ArrayList inserting 100_000 numbers in the Head time = "  + ArrayListInsertTime));
+        System.out.println(("LinkedList inserting 100_000 numbers in the Head time = " + LinkedListInsertTime));
+
         /*
          * 6) Measure the performance of reading 1000 times an element whose
          * position is in the middle of the collection for both ArrayList and
