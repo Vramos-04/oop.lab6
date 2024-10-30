@@ -33,14 +33,14 @@ public final class UseListsAndMaps {
          * without using any looping construct (for, while), populate it with
          * the same contents of the list of point 1.
          */
-        LinkedList<Integer> secondList = new LinkedList<>coll);
+        LinkedList<Integer> secondList = new LinkedList<>();
         /*
          * 3) Using "set" and "get" and "size" methods, swap the first and last
          * element of the first list. You can not use any "magic number".
          * (Suggestion: use a temporary variable)
          */
         int temporaryVariable =coll.get(0);
-         coll.set(coll.get(0),coll.size()-1);
+         coll.set(0,coll.get(coll.size()-1));
          coll.set(coll.size()-1,temporaryVariable);     
         /*
          * 4) Using a single for-each, print the contents of the arraylist.
@@ -81,6 +81,25 @@ public final class UseListsAndMaps {
          * LinkedList, using the collections of point 5. In order to measure
          * times, use as example TestPerformance.java.
          */
+
+        long arrayListReadingTime = System.nanoTime();
+        final int middleIndex = coll.size() / 2 ;
+
+        for(int i = 0 ; i < NUMBERS ; i++){
+            int arrayListValue = coll.get(middleIndex);
+        }
+
+        arrayListReadingTime = System.nanoTime() - arrayListReadingTime;
+
+        long linkedListReadingTime = System.nanoTime();
+
+        for(int j = 0 ; j < NUMBERS ; j++ ){
+            int linkedListValue = secondList.get(middleIndex);
+        } 
+
+        System.out.println( "Time spent for reading 1000 times in the ArrayList = " +arrayListReadingTime );
+        System.out.println( "Time spent for reading 1000 times in the LinkedList = " +linkedListReadingTime );
+
         /*
          * 7) Build a new Map that associates to each continent's name its
          * population:
@@ -97,6 +116,8 @@ public final class UseListsAndMaps {
          *
          * Oceania -> 38,304,000
          */
+
+
         /*
          * 8) Compute the population of the world
          */
